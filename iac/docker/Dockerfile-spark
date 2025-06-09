@@ -1,0 +1,13 @@
+FROM amazoncorretto:11
+
+ARG spark_version="3.5.5"
+ARG spark_home="/opt/spark"
+ARG spark_conf="/etc/spark/conf"
+ARG created_date="`date -u +\"%Y-%m-%dT%H:%M:%SZ\"`"
+
+LABEL author="Lucke Luz"
+LABEL image="spark"
+LABEL build_date="${created_date}"
+LABEL version="${spark_version}"
+
+ENTRYPOINT ["top", "-b"]
